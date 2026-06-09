@@ -6,9 +6,11 @@
 }
 
 body {
-    background-color: #1a1c23 !important; 
+    /* KOREKSI UTAMA: Mengembalikan ke transparan penuh agar layar game tidak tertutup boks hitam */
+    background-color: transparent !important; 
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
     color: white;
+    overflow: hidden;
 }
 
 .hud-container {
@@ -16,9 +18,8 @@ body {
     bottom: 30px;
     right: 30px;
     width: 280px;
-    background: rgba(10, 12, 18, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    /* Menggunakan background transparan gelap yang elegan khusus panel HUD saja */
+    background: rgba(10, 12, 18, 0.85);
     border: 1px solid rgba(0, 210, 255, 0.2);
     border-radius: 16px;
     padding: 24px;
