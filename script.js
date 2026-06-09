@@ -3,7 +3,7 @@ let speedMode = 1;
 let indicators = 0;
 let isEngineOn = false;
 
-// Pastikan kamu menyiapkan file 'klakson.mp3' di folder yang sama dengan index.html
+// Pastikan file 'klakson.mp3' sudah di-upload ke repositori GitHub-mu
 const audioKlakson = new Audio('klakson.mp3');
 
 function setIconState(element, state) {
@@ -183,6 +183,7 @@ function playStartupAnimation() {
         
         let randomHealthPct = Math.floor(Math.random() * 100);
         elements.healthBar.style.width = `${randomHealthPct}%`;
+        // SUDAH DI-FIX: Menggunakan 'randomHealthPct', bukan 'healthPercent' yang bikin crash kemarin
         elements.healthVal.innerText = `${randomHealthPct}%`; 
         elements.healthBar.style.background = getColorByPercentage(randomHealthPct);
         
@@ -201,7 +202,7 @@ function playStartupAnimation() {
         if (elapsed >= duration) {
             clearInterval(startupInterval);
             
-            // Suara klakson berbunyi tepat di detik ke-3 saat sistem siap digunakan
+            // Pemicu suara klakson aman di sini
             audioKlakson.play().catch(e => console.log("Audio diblokir browser, klik layar sekali dulu agar aktif."));
 
             elements.rpmBar.style.transition = 'width 0.15s ease-out';
